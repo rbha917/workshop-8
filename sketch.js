@@ -3,7 +3,7 @@ let weather_api; 'https://api.open-meteo.com/v1/jma?latitude=52.52&longitude=13.
 let windSpeed, windDirection, temp, dayNight;
 
 async function forecast(){
-	let data = await fetch(weather_api_api); 
+	let data = await fetch(weather_api); 
 	let j_data = await data.json();
 	ip = j_data.ip;
   temp = j_data.current.temperature_2m; 
