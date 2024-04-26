@@ -34,21 +34,25 @@ function draw() {
   fill(255);
   text("The colour of the screen indicates whether it is day or night in Japan currently. ", 20, 75);
 
-  text("The current temperature in Japan is: " + temp, 20, 90);
-  if(temp >= 20){
+  text("The current temperature in Japan is: " + temp + " °C", 20, 90);
+  if(temp >= 20){ 
     fill(255, 255, 0)
     noStroke();
     ellipse(500, 70, 50, 50);
-  } else if(temp < 10) {
+  } else if(temp < 12) {
     image(snowflake, 454, 40, 100, 100);
   }
   
-  text("The current wind speed is: " + windSpeed, 20, 105);
-  text("The current wind direction is: " + windDirection, 20, 120);
+  text("The current wind speed is: " + windSpeed + " km/h", 20, 105);
+  text("The current wind direction is: " + windDirection + "°", 20, 120);
   if(windDirection > 180){
     text(windSpeed + " km/h", 120, 200);
     noStroke();
     triangle(30, 200, 100, 150, 100, 250);
+  } else if(windDirection = 180) {
+    text(windSpeed + " km/h", 120, 200);
+    noStroke();
+    triangle(30, 150, 100, 150, 67, 250);
   } else {
     text(windSpeed + " km/h", 120, 200);
     noStroke();
